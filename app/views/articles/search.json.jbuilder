@@ -4,5 +4,5 @@ json.articles @articles do |article|
   json.title article.title
   json.date article.date
   json.published article.published
-  json.commentsCount article.comments.count
+  json.commentsCount article.comments.size
 end

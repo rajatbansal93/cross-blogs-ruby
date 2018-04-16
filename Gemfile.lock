@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     arel (8.0.0)
     builder (3.2.3)
+    byebug (10.0.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     database_cleaner (1.6.2)
@@ -151,6 +152,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   database_cleaner
   factory_bot_rails
   figaro
@@ -162,6 +164,9 @@ DEPENDENCIES
   rspec-rails (~> 3.7.2)
   shoulda
   simplecov
+
+RUBY VERSION
+   ruby 2.3.0p0
 
 BUNDLED WITH
    1.16.1
