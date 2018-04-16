@@ -1,14 +1,15 @@
 # Comments Controller
 class CommentsController < ApplicationController
+  before_action :set_article, only: [:create]
 
   # GET /articles/1/comments/1.json
   def index
-    @comments = Comment.all.order(created_at: :desc)
+    @comments = Comment.where(article_id: params[:article_id]).order(created_at: :desc)
   end
 
   # POST /articles/1/comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @comment = @article.comments.build(comment_params)
 
     if @comment.save
       render :show, status: :created
@@ -20,6 +21,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def set_article
+    @article = Article.find(params[:article_id])
+  end
 
   # Whitelisted parameters for Comment.
   def comment_params
